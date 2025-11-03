@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Bienvenida</title>
+</head>
+<body>
+<h1 th:text="${message}">Mensaje por defecto que no se verá</h1>
+<h2>Datos del Usuario 1:</h2>
+<p><strong>Nombre:</strong> <span th:text="${userObjectOne.name}">Nombre
+    aquí</span></p>
+<p><strong>Correo:</strong> <span th:text="${userObjectOne.email}">Correo
+    aquí</span></p>
+<h2>Datos del Usuario 2:</h2>
+<p><strong>Nombre:</strong> <span th:text="${userObjectTwo.name}">Nombre
+    aquí</span></p>
+<p><strong>Correo:</strong> <span th:text="${userObjectTwo.email}">Correo
+    aquí</span></p>
+</body>
+</html>
