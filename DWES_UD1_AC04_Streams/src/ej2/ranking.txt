@@ -1,5 +1,5 @@
 ****Duración media de todas las canciones****
-216.25 segundos
+215.0 segundos
 ****Canciones cuyo tiempo de escucha total es mayor a 10 minutos*****
 As It Was (Harry Styles) - 950.000.000 reproducciones
 Flowers (Miley Cyrus) - 1.200.000.000 reproducciones
