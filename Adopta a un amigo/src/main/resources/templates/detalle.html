@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Detalle de la mascota</h1>
+    <p><strong>ID:</strong> <span th:text="${mascota.id}"></span></p>
+    <p><strong>Nombre:</strong> <span th:text="${mascota.nombre}"></span></p>
+    <p><strong>Especie:</strong> <span th:text="${mascota.especie}"></span></p>
+    <p><strong>Edad:</strong> <span th:text="${mascota.edad}"></span></p>
+
+    <p><a th:href="@{/mascotas/nueva}">Volver</a></p>
+    <p><a th:href="@{/mascotas}">Ver listado completo</a></p>
+</body>
+</html>
