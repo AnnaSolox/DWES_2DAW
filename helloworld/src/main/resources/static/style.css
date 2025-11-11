@@ -1,0 +1,25 @@
+body {
+    font-family: "Lexend", sans-serif;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+  font-family: "Fugaz One", sans-serif;
+  font-size: 52px;
+}
+
+.usuarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+article {
+    flex: 1 1 auto;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 22px;
+}
