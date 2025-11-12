@@ -8,13 +8,44 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+    <main>
     <h1>Detalle de la mascota</h1>
-    <p><strong>ID:</strong> <span th:text="${mascota.id}"></span></p>
-    <p><strong>Nombre:</strong> <span th:text="${mascota.nombre}"></span></p>
-    <p><strong>Especie:</strong> <span th:text="${mascota.especie}"></span></p>
-    <p><strong>Edad:</strong> <span th:text="${mascota.edad}"></span></p>
+        <div class="detalle-mascota">
+        <figure class="side-imagen">
+            <img th:src="@{/images/default_image.jpg}" alt="Imagen de perros">
+        </figure>
+        <div class="info-mascota">
+            <article>
+                <dl>
+                    <div>
+                        <dt>ID:</dt>
+                        <dd th:text="${mascota.id}"></dd>
+                    </div>
 
-    <p><a th:href="@{/mascotas/nueva}">Volver</a></p>
-    <p><a th:href="@{/mascotas}">Ver listado completo</a></p>
+                    <div>
+                        <dt>Nombre:</dt>
+                        <dd th:text="${mascota.nombre}"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Especie:</dt>
+                        <dd th:text="${mascota.especie}"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Edad:</dt>
+                        <dd th:text="${mascota.edad}"></dd>
+                    </div>
+                </dl>
+            </article>
+
+            <nav class="acciones">
+                <a th:href="@{/mascotas/nueva}">Volver</a>
+                <a th:href="@{/mascotas}">Ver listado completo</a>
+            </nav>
+        </div>
+        </div>
+    </main>
+
 </body>
 </html>

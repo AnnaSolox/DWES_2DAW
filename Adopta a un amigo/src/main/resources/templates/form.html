@@ -10,10 +10,10 @@
 </head>
 <body>
     <h1>Registrar mascota</h1>
-    <section class="seccion-formulario">
-        <div class="formulario-imagen">
+    <main class="seccion-formulario">
+        <figure class="side-imagen">
             <img th:src="@{/images/default_image.jpg}" alt="Imagen de perros">
-        </div>
+        </figure>
         <form th:action="@{/mascotas}" th:object="${mascota}" method="post">
             <div class="inputs">
                 <div>
@@ -42,6 +42,6 @@
 
             <button type="submit">Enviar</button>
         </form>
-    </section>
+    </main>
 </body>
 </html>

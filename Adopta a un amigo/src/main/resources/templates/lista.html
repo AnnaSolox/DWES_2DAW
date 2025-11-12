@@ -8,29 +8,39 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>Mascotas disponibles</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Imagen</th>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Especie</th>
-                <th>Edad</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="mascota:${mascotas}">
-                <td><img th:src="@{${mascota.imagen}}" alt="Imagen de mascota" width="120"></td>
-                <td th:text="${mascota.id}"></td>
-                <td th:text="${mascota.nombre}"></td>
-                <td th:text="${mascota.especie}"></td>
-                <td th:text="${mascota.edad}"></td>
-                <td><a th:href="@{/mascotas/nueva}">Editar</a></td>
-                <td><a>Borrar</a></td>
-            </tr>
-        </tbody>
-    </table>
-
+    <main>
+        <h1>Mascotas disponibles</h1>
+        <div class="lista-mascotas">
+            <table class="tabla-listado">
+                <thead>
+                <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="mascota:${mascotas}">
+                    <td>
+                        <div class="imagen-tabla">
+                            <img th:src="@{${mascota.imagen}}" alt="Imagen de mascota" width="120">
+                        </div>
+                    </td>
+                    <td th:text="${mascota.id}"></td>
+                    <td th:text="${mascota.nombre}"></td>
+                    <td th:text="${mascota.especie}"></td>
+                    <td th:text="${mascota.edad}"></td>
+                    <td>
+                        <a th:href="@{/mascotas/nueva}">Editar</a>
+                        <a>Borrar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 </body>
 </html>
