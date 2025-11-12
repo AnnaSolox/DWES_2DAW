@@ -13,7 +13,7 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    scroll-padding-top: 0rem;
+    scroll-padding-top: 0;
 }
 *,
 *:before,
@@ -104,7 +104,7 @@ form .inputs div{
 }
 
 form .inputs div:last-of-type{
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 }
 
 .seccion-formulario .err{
