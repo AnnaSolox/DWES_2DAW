@@ -5,30 +5,43 @@
     <title>Formulario de Mascota</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <h1>Registrar mascota</h1>
-    <form th:action="@{/mascotas}" th:object="${mascota}" method="post">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" th:field="*{nombre}" placeholder="Nombre de la mascota">
-        <div class="err" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+    <section class="seccion-formulario">
+        <div class="formulario-imagen">
+            <img th:src="@{/images/default_image.jpg}" alt="Imagen de perros">
+        </div>
+        <form th:action="@{/mascotas}" th:object="${mascota}" method="post">
+            <div class="inputs">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" th:field="*{nombre}" placeholder="Nombre de la mascota">
+                    <p class="err" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></p>
+                </div>
 
-        <label for="especie">Escoge la especie</label>
-        <select id="especie" th:field="*{especie}">
-            <option value="">Selecciona una especie</option>
-            <option value="perro">Perro</option>
-            <option value="gato">Gato</option>
-            <option value="conejo">Conejo</option>
-        </select>
-        <div class="err" th:if="${#fields.hasErrors('especie')}" th:errors="*{especie}"></div>
+                <div>
+                    <label for="especie">Especie</label>
+                    <select id="especie" th:field="*{especie}">
+                        <option value="">Selecciona una especie</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="conejo">Conejo</option>
+                    </select>
+                    <p class="err" th:if="${#fields.hasErrors('especie')}" th:errors="*{especie}"></p>
+                </div>
 
-        <label for="edad">Edad</label>
-        <input id="edad" th:field="*{edad}" placeholder="Edad">
-        <div class="err" th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}"></div>
+                <div>
+                    <label for="edad">Edad</label>
+                    <input id="edad" th:field="*{edad}" placeholder="Edad">
+                    <p class="err" th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}"></p>
+                </div>
+            </div>
 
-        <button type="submit">Enviar</button>
-    </form>
-
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 </body>
 </html>
