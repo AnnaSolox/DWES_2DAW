@@ -14,7 +14,9 @@
         <figure class="side-imagen">
             <img th:src="@{/images/default_image.jpg}" alt="Imagen de perros">
         </figure>
-        <form th:action="@{/mascotas}" th:object="${mascota}" method="post">
+        <form class="introducir-informacion" th:action="@{/mascotas}" th:object="${mascota}" method="post">
+
+            <input input type="hidden" th:field="*{id}" >
             <div class="inputs">
                 <div>
                     <label for="nombre">Nombre</label>

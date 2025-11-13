@@ -14,10 +14,16 @@ public class MascotaService {
     private final List<Mascota> bd = new CopyOnWriteArrayList<>();
 
     public Long guardar(Mascota mascota){
-        Long id = secuencia.getAndIncrement();
-        mascota.setId(id);
-        bd.add(mascota);
-        return id;
+        if(mascota.getId() == null){
+            Long id = secuencia.getAndIncrement();
+            mascota.setId(id);
+            bd.add(mascota);
+            return id;
+        } else {
+            bd.removeIf(m -> Objects.equals(m.getId(), mascota.getId()));
+            bd.add(mascota);
+            return mascota.getId();
+        }
     }
 
     public Mascota buscarPorId(Long id){
@@ -27,6 +33,10 @@ public class MascotaService {
                 .orElse(null);
         System.out.println(mascota);
         return mascota;
+    }
+
+    public void borrarMascota (Long id){
+        bd.removeIf(mascota -> Objects.equals(mascota.getId(), id));
     }
 
     public List<Mascota> listar(){

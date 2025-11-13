@@ -121,6 +121,7 @@ button {
     border:none;
     border-radius: .2rem;
     font-weight: bold;
+    margin: 0;
 }
 
 button:hover {
@@ -153,18 +154,23 @@ dt {
 }
 
 a {
-    width: auto;
+    margin-top:1.5rem;
+    font-size: var(--tamanio-texto);
+    min-width: 10rem;
+    display: inline-block;
+    width: 70%;
     text-align: center;
     text-decoration: none;
+    background-color: var(--color-acento);
     color: var(--color-texto-principal);
-    padding: 1.5rem 4rem;
-    border: .2rem solid var(--color-acento);
+    border:none;
     border-radius: .2rem;
     font-weight: bold;
+    padding: 1.5rem 4rem;
 }
 
 a:hover {
-    background-color: var(--color-acento);
+    background-color: var(--color-primario);
 }
 
 .lista-mascotas {

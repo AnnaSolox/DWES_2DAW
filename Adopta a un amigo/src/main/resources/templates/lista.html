@@ -34,8 +34,11 @@
                     <td th:text="${mascota.especie}"></td>
                     <td th:text="${mascota.edad}"></td>
                     <td>
-                        <a th:href="@{/mascotas/nueva}">Editar</a>
-                        <a>Borrar</a>
+                        <a th:href="@{/mascotas/{id}/editar (id=${mascota.id})}">Editar</a>
+                        <form th:action="@{/mascotas/borrar}" th:object="${mascota}" method="post">
+                            <input type="hidden" name="id" th:value="${mascota.id}">
+                            <button type="submit">Borrar</button>
+                        </form>
                     </td>
                 </tr>
                 </tbody>
